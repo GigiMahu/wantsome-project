@@ -1,0 +1,57 @@
+Project Structure
+Project summary
+Build a CI/CD server and an environment server that will build and deploy docker images.
+The application in scope is Drupal with a PostgreSQL database.
+The docker images will be executed on the environment server
+Project layout
+The github project needs to be public
+Folder structure:
+environment / vagrantfile
+dockerfiles / load_balancer / dockerfile
+                   / application / dockerfile
+                   / database / dockerfile
+(or) dockerfile / dockerfile.load_balancer;
+                        / dockerfile.application;
+                        / dockerfile.database
+jenkinsfiles / load_balancer / Jenkinsfile
+                   / application / Jenkinsfile
+                   / database / Jenkinsfile
+Infrastructure
+Virtualbox
+Vagrant
+Through a vagrant script we will provision the infrastructure
+Infrastructure requirement
+2 servers
+CI/CD Server
+Jenkins
+Docker (optional)
+Environment Server
+Docker
+What happens on the CI/CD server
+Install and configure Jenkins
+Jenkins will be accessible on port 8080
+Have jobs to do the following:
+Creates docker images
+we need to have jobs that creates the images
+1 for load balancer
+1 for application
+1 for database
+for the database you are allowed to use official images (mysql / postgres)
+extra challange - to create your own database image
+Once the images are create they need to be pushed into docker hub
+Deploys the docker images from Docker Hub into the environment server
+Stages of a Jenkins file
+(checkout) from git
+(build) / create docker image
+(push) to docker hub
+(deploy) image to environment
+Number of jobs (3)
+load balancer
+application
+database
+Extra challanges
+create database docker images
+automatically create jenkins jobs
+What happens on the Environment server
+Install and configure docker
+The application will be accessible on port 80 through the Load Balancer
