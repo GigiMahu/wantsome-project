@@ -1,0 +1,6 @@
+FROM ubuntu
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update && apt upgrade -y
+RUN apt install php-cli php-curl php-gd php-mbstring php-sqlite3 php-xml -y
+RUN mkdir drupal && cd drupal && curl -sSL https://www.drupal.org/download-latest/tar.gz | tar -xz --strip-components=1
+RUN php -d memory_limit=256M ./core/scripts/drupal quick-start demo_umami
