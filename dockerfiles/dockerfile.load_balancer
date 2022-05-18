@@ -2,5 +2,5 @@ FROM ubuntu
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt upgrade -y
 RUN apt install nginx -y
-COPY /vagrant/files/nginx/lb/default /etc/nginx/sites-available/default
+COPY /var/lib/jenkins/workspace/load_balancer/dockerfiles/files/nginx/lb/default /etc/nginx/sites-available/default
 ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
