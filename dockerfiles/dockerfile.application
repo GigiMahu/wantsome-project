@@ -16,7 +16,7 @@ RUN wget https://www.drupal.org/download-latest/tar.gz --directory-prefix=/tmp &
 # RUN php -d memory_limit=256M ./core/scripts/drupal quick-start demo_umami
 # RUN chown -R www-data. /var/www/html/drupal
 
-COPY files/nginx/app/default /etc/nginx/sites-available/default
-COPY files/info.php /var/www/html
-COPY files/entrypoint.sh /
+COPY dockerfiles/files/nginx/app/default /etc/nginx/sites-available/default
+COPY dockerfiles/files/info.php /var/www/html
+COPY dockerfiles/files/entrypoint.sh /
 ENTRYPOINT [ "bash", "/entrypoint.sh" ]
