@@ -1,7 +1,7 @@
 pipeline {
     environment {
-        registry = "gigimahu/wantsome-project/load_balancer"
-        registryCredential = 'DockerHub_ID'
+        registry = "gigimahu/p-load_balancer"
+        registryCredential = 'dockerhub_id'
         dockerImage = ''
         dockerfile = 'dockerfile.load_balancer'
     }
