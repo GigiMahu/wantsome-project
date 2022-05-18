@@ -1,0 +1,32 @@
+pipeline {
+    environment {
+        registry = "gigimahu/p-application"
+        registryCredential = 'dockerhub_id'
+        dockerImage = ''
+        dockerfile = 'dockerfile.application'
+    }
+    agent any
+    stages {
+        stage('Cloning Git') {
+            steps {
+                git 'https://github.com/GigiMahu/wantsome-project.git'
+            }
+        }
+        stage('Building Docker image') {
+            steps{
+                script {
+                    dockerImage = docker.build(registry,"-f ./dockerfiles/${dockerfile} .")
+                }
+            }
+        }
+        stage('Deploy Docker image') {
+            steps{
+                script {
+                    docker.withRegistry( '', registryCredential ) {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+    }
+}
