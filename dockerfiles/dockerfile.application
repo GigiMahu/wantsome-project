@@ -1,6 +1,22 @@
 FROM ubuntu
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt upgrade -y
+RUN apt install nginx wget -y
 RUN apt install php-cli php-curl php-gd php-mbstring php-sqlite3 php-xml -y
-RUN mkdir drupal && cd drupal && curl -sSL https://www.drupal.org/download-latest/tar.gz | tar -xz --strip-components=1
-RUN php -d memory_limit=256M ./core/scripts/drupal quick-start demo_umami
+# RUN apt install php7.4 libapache2-mod-php7.4 php7.4-{common,mbstring,xmlrpc,soap,gd,xml,intl,mysql,cli,zip,curl,fpm} -y
+
+RUN mkdir /var/www/html/drupal
+RUN cd /var/www/html/drupal
+
+RUN wget https://www.drupal.org/download-latest/tar.gz --directory-prefix=/tmp && \
+    tar xf /tmp/tar.gz --directory=/var/www/html/drupal && \
+    rm /tmp/tar.gz
+
+# RUN curl -sSL https://www.drupal.org/download-latest/tar.gz | tar -xz --strip-components=1
+# RUN php -d memory_limit=256M ./core/scripts/drupal quick-start demo_umami
+# RUN chown -R www-data. /var/www/html/drupal
+
+COPY files/nginx/app/default /etc/nginx/sites-available/default
+COPY files/info.php /var/www/html
+COPY files/entrypoint.sh /
+ENTRYPOINT [ "bash", "/entrypoint.sh" ]

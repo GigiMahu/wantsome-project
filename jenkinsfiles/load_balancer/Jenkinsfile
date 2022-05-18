@@ -1,0 +1,32 @@
+pipeline {
+    environment {
+        registry = "gigimahu/wantsome-project/load_balancer"
+        registryCredential = 'dockerhub_id'
+        dockerImage = ''
+        dockerfile = 'dockerfile.load_balancer'
+    }
+    agent any
+    stages {
+        stage('Cloning Git') {
+            steps {
+                git 'https://github.com/GigiMahu/wantsome-project.git'
+            }
+        }
+        stage('Building Docker image') {
+            steps{
+                script {
+                    dockerImage = docker.build(registry,"-f ./dockerfiles/${dockerfile} .")
+                }
+            }
+        }
+        stage('Deploy Docker image') {
+            steps{
+                script {
+                    docker.withRegistry( '', registryCredential ) {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+    }
+}
