@@ -3,7 +3,7 @@ pipeline {
         registry = "gigimahu/p-application"
         registryCredential = 'dockerhub_id'
         dockerImage = ''
-        dockerfile = 'dockerfile.application'
+        dockerFile = 'dockerfile.application'
     }
     agent any
     stages {
@@ -15,7 +15,7 @@ pipeline {
         stage('Building Docker image') {
             steps{
                 script {
-                    dockerImage = docker.build(registry,"-f ./dockerfiles/${dockerfile} .")
+                    dockerImage = docker.build(registry,"-f ./dockerfiles/${dockerFile} .")
                 }
             }
         }

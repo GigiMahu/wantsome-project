@@ -3,7 +3,7 @@ pipeline {
         registry = "gigimahu/p-load_balancer"
         registryCredential = 'dockerhub_id'
         dockerImage = ''
-        dockerfile = 'dockerfile.load_balancer'
+        dockerFile = 'dockerfile.load_balancer'
     }
     agent any
     stages {
@@ -15,7 +15,7 @@ pipeline {
         stage('Building Docker image') {
             steps{
                 script {
-                    dockerImage = docker.build(registry,"-f ./dockerfiles/${dockerfile} .")
+                    dockerImage = docker.build(registry,"-f ./dockerfiles/${dockerFile} .")
                 }
             }
         }
