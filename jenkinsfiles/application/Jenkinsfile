@@ -19,7 +19,7 @@ pipeline {
                 }
             }
         }
-        stage('Deploy Docker image') {
+        stage('Push Docker image on DockerHube') {
             steps{
                 script {
                     docker.withRegistry( '', registryCredential ) {
