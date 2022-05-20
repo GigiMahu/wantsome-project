@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=jenkins
 Environment=JENKINS_HOME=/opt/jenkins
-ExecStart=/usr/bin/java -jar -Djenkins.install.runSetupWizard=true /opt/jenkins/jenkins.war --httpPort=8080
+ExecStart=/usr/bin/java -jar -Djenkins.install.runSetupWizard=false /opt/jenkins/jenkins.war --httpPort=8080
 ExecStop=/bin/kill $MAINPID
 
 [Install]

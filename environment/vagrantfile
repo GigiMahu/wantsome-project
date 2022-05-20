@@ -116,6 +116,7 @@ SCRIPT
 
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/focal64"
+  # config.vm.boot_timeout = 600
 
   config.vm.define "cicd_server" do |jk|
     jk.vm.hostname = "jenkins"
@@ -127,11 +128,10 @@ Vagrant.configure("2") do |config|
     jk.vm.provision "shell", :inline => $os_packages_update
     jk.vm.provision "shell", :inline => $docker_install
     jk.vm.provision "shell", :inline => $user_setup
-    jk.vm.provision "shell", :inline => $jenkins_setup_war_package
-    # jk.vm.provision "shell", :inline => $jenkins_setup_deb_package
+    # jk.vm.provision "shell", :inline => $jenkins_setup_war_package
+    jk.vm.provision "shell", :inline => $jenkins_setup_deb_package
   end
 
-=begin
   config.vm.define "env_server" do |dk|
     dk.vm.hostname = "docker"
     dk.vm.network "private_network", ip: "192.168.56.20"
@@ -143,5 +143,5 @@ Vagrant.configure("2") do |config|
     dk.vm.provision "shell", :inline => $docker_install
     # dk.vm.provision "shell", :inline => $user_setup
   end
-=end
+
 end

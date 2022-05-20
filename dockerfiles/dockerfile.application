@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt upgrade -y
 RUN apt install nginx -y
