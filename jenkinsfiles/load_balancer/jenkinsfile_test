@@ -4,6 +4,7 @@ pipeline {
         registryCredential = 'dockerhub_id'
         dockerImage = ''
         dockerFile = 'dockerfile.load_balancer'
+        dockerRun = "docker run -p 80:80 -d --name load_balancer ${registry}"
     }
     agent any
     stages {
@@ -29,9 +30,10 @@ pipeline {
             }
         }
         stage('Run Container on Env Server'){
-            def dockerRun = "docker run -p 8080:80 -d --name my-app ${registry}"
-            sshagent(['env_server']) {
-                sh "ssh -o StrictHostKeyChecking=no docker@192.168.56.20 ${dockerRun}"
+            steps{
+                sshagent(credentials: ['env_server']) {
+                    sh "ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 ${dockerRun}"
+                }
             }
         }
     }

@@ -4,6 +4,7 @@ pipeline {
         registryCredential = 'dockerhub_id'
         dockerImage = ''
         dockerFile = 'dockerfile.application'
+        dockerRun = "docker run -d --name app1 ${registry} && docker run -d --name app2 ${registry}"
     }
     agent any
     stages {
@@ -25,6 +26,13 @@ pipeline {
                     docker.withRegistry( '', registryCredential ) {
                         dockerImage.push()
                     }
+                }
+            }
+        }
+        stage('Run Container on Env Server'){
+            steps{
+                sshagent(credentials: ['env_server']) {
+                    sh "ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 ${dockerRun}"
                 }
             }
         }
