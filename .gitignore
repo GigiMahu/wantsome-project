@@ -3,5 +3,5 @@ Project-structure.docx
 Project-structure.txt
 Wantsome-Project.pdf
 environment/.vagrant/
-jenkins_keys/id_rsa
-jenkins_keys/id_rsa.pub
+environment/files/jenkins_keys/id_rsa
+environment/files/jenkins_keys/id_rsa.pub

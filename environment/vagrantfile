@@ -36,8 +36,55 @@ function create_user {
   fi
 }
 
+function set_authorized_keys {
+  if [[ ! -d /home/$1/.ssh ]]; then
+    echo "Creating .ssh folder for $1 ssh access"
+    mkdir /home/$1/.ssh
+  fi
+  
+  if [[ ! -f /vagrant/files/jenkins_keys/id_rsa.pub ]]; then
+    echo "Make sure the vagrant folder is mounted and the file jenkins.pub exists!"
+    exit 1
+  fi
+
+  cat /vagrant/files/jenkins_keys/id_rsa.pub > /home/$1/.ssh/authorized_keys
+
+  chown -R $1:$1 /home/$1/.ssh
+  chmod 600 /home/$1/.ssh/authorized_keys
+}
+
+function set_ssh_keys {
+  if [[ ! -d /home/$1/.ssh ]]; then
+    echo "Creating .ssh folder for $1 ssh access"
+    mkdir /home/$1/.ssh
+  fi
+  
+  if [[ ! -f /vagrant/files/jenkins_keys/id_rsa.pub ]]; then
+    echo "Make sure the vagrant folder is mounted and the file jenkins.pub exists!"
+    exit 1
+  fi
+
+  cat /vagrant/files/jenkins_keys/id_rsa.pub > /home/$1/.ssh/
+
+  if [[ ! -f /vagrant/files/jenkins_keys/id_rsa ]]; then
+    echo "Make sure the vagrant folder is mounted and the file jenkins exists!"
+    exit 1
+  fi
+
+  cat /vagrant/files/jenkins_keys/id_rsa > /home/$1/.ssh/
+
+  chown -R $1:$1 /home/$1/.ssh
+  chmod 600 /home/$1/.ssh/id_rsa*
+}
+
 create_user "jenkins"
 usermod -aG docker jenkins
+
+if [ `hostname` == "docker" ]; then
+  set_authorized_keys "jenkins"
+else
+  set_ssh_keys "jenkins"
+fi
 
 SCRIPT
 
@@ -124,7 +171,7 @@ Vagrant.configure("2") do |config|
     jk.vm.network "private_network", ip: "192.168.56.10"
     jk.vm.provider "virtualbox" do |vb|
       vb.cpus = 2
-      vb.memory = 3072
+      vb.memory = 2048
     end
     jk.vm.provision "shell", :inline => $os_packages_update
     jk.vm.provision "shell", :inline => $docker_install
@@ -138,7 +185,7 @@ Vagrant.configure("2") do |config|
     dk.vm.network "private_network", ip: "192.168.56.20"
     dk.vm.provider "virtualbox" do |vb|
       vb.cpus = 1
-      vb.memory = 2048
+      vb.memory = 1024
     end
     dk.vm.provision "shell", :inline => $os_packages_update
     dk.vm.provision "shell", :inline => $docker_install
