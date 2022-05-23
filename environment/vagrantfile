@@ -44,11 +44,11 @@ SCRIPT
 $jenkins_setup_war_package = <<SCRIPT
 #!/bin/bash
   echo " Installing Jenkins war package..."
-  # JENKINS_VERSION="2.348"
-  # JENKINS_URL="https://get.jenkins.io/war/${JENKINS_VERSION}/jenkins.war"
+  JENKINS_VERSION="2.348"
+  JENKINS_URL="https://get.jenkins.io/war/${JENKINS_VERSION}/jenkins.war"
 
-  JENKINS_VERSION="2.332.3"
-  JENKINS_URL="https://get.jenkins.io/war-stable/${JENKINS_VERSION}/jenkins.war"
+  # JENKINS_VERSION="2.332.3"
+  # JENKINS_URL="https://get.jenkins.io/war-stable/${JENKINS_VERSION}/jenkins.war"
 
   echo " Installing Jenkins dependencies..."
   apt install openjdk-11-jre -y
@@ -124,7 +124,7 @@ Vagrant.configure("2") do |config|
     jk.vm.network "private_network", ip: "192.168.56.10"
     jk.vm.provider "virtualbox" do |vb|
       vb.cpus = 2
-      vb.memory = 4096
+      vb.memory = 3072
     end
     jk.vm.provision "shell", :inline => $os_packages_update
     jk.vm.provision "shell", :inline => $docker_install
@@ -137,8 +137,8 @@ Vagrant.configure("2") do |config|
     dk.vm.hostname = "docker"
     dk.vm.network "private_network", ip: "192.168.56.20"
     dk.vm.provider "virtualbox" do |vb|
-      vb.cpus = 2
-      vb.memory = 4096
+      vb.cpus = 1
+      vb.memory = 2048
     end
     dk.vm.provision "shell", :inline => $os_packages_update
     dk.vm.provision "shell", :inline => $docker_install
