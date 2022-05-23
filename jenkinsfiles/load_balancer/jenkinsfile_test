@@ -3,7 +3,7 @@ pipeline {
         registry = "gigimahu/p-load_balancer"
         registryCredential = 'dockerhub_id'
         dockerImage = ''
-        dockerFile = 'dockerfile.load_balancer'
+        dockerFile = 'dockerfile.lb'
         dockerRun = "docker run -p 80:80 -d --name load_balancer ${registry}"
     }
     agent any

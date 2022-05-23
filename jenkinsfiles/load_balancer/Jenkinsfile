@@ -3,7 +3,13 @@ pipeline {
         registry = "gigimahu/p-load_balancer"
         registryCredential = 'dockerhub_id'
         dockerImage = ''
-        dockerFile = 'dockerfile.load_balancer'
+        dockerFile = 'dockerfile.lb'
+        dockerRun = "docker run \
+                        --detach \
+                        --publish 80:80 \
+                        --network wantsome \
+                        --name load_balancer \
+                        ${registry}"
     }
     agent any
     stages {
@@ -25,6 +31,14 @@ pipeline {
                     docker.withRegistry( '', registryCredential ) {
                         dockerImage.push()
                     }
+                }
+            }
+        }
+        stage('Run Container on Env Server'){
+            steps{
+                sshagent(credentials: ['env_server']) {
+                    sh "ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 docker network create wantsome"
+                    sh "ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 ${dockerRun}"
                 }
             }
         }
