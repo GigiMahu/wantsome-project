@@ -23,7 +23,7 @@ RUN sed -i -e "$ a [client]\n\n[mysql]\n\n[mysqld]"  /etc/mysql/my.cnf && \
 
 VOLUME /var/lib/mysql
 
-COPY ./database.sh /root/database.sh
+COPY dockerfiles/database.sh /root/database.sh
 RUN chmod +x /root/database.sh
 
 ENTRYPOINT ["/root/database.sh"]
