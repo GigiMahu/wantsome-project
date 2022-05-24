@@ -5,6 +5,9 @@
 
 $os_packages_update = <<SCRIPT
 #!/bin/bash
+  echo "Processing triggers for man-db - Recreating mandb index..."
+  # rm -rf /var/cache/man
+  # mandb -c
   echo "Update OS packages..."
   apt update && apt upgrade -y 
 SCRIPT
@@ -46,8 +49,9 @@ function set_authorized_keys {
     echo "Make sure the vagrant folder is mounted and the file jenkins.pub exists!"
     exit 1
   fi
-
-  cat /vagrant/files/jenkins_keys/id_rsa.pub > /home/$1/.ssh/authorized_keys
+ 
+  #cat /vagrant/files/jenkins_keys/id_rsa.pub > /home/$1/.ssh/authorized_keys
+  cp /vagrant/files/jenkins_keys/id_rsa.pub /home/$1/.ssh/authorized_keys
 
   chown -R $1:$1 /home/$1/.ssh
   chmod 600 /home/$1/.ssh/authorized_keys
@@ -64,17 +68,20 @@ function set_ssh_keys {
     exit 1
   fi
 
-  cat /vagrant/files/jenkins_keys/id_rsa.pub > /home/$1/.ssh/
+  # cat /vagrant/files/jenkins_keys/id_rsa.pub > /home/$1/.ssh/id_rsa.pub
+  cp /vagrant/files/jenkins_keys/id_rsa.pub /home/$1/.ssh/id_rsa.pub
 
   if [[ ! -f /vagrant/files/jenkins_keys/id_rsa ]]; then
     echo "Make sure the vagrant folder is mounted and the file jenkins exists!"
     exit 1
   fi
 
-  cat /vagrant/files/jenkins_keys/id_rsa > /home/$1/.ssh/
+  # cat /vagrant/files/jenkins_keys/id_rsa > /home/$1/.ssh/id_rsa
+  cp /vagrant/files/jenkins_keys/id_rsa /home/$1/.ssh/id_rsa
 
   chown -R $1:$1 /home/$1/.ssh
-  chmod 600 /home/$1/.ssh/id_rsa*
+  chmod 600 /home/$1/.ssh/id_rsa
+  chmod 600 /home/$1/.ssh/id_rsa.pub
 }
 
 create_user "jenkins"
