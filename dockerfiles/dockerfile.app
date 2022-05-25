@@ -1,15 +1,22 @@
 FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt upgrade -y
-RUN apt install nginx -y
-RUN apt install php7.4-fpm -y
-RUN apt install wget -y
-RUN apt install php-mysql -y
-RUN wget https://wordpress.org/latest.tar.gz --directory-prefix=/tmp && \
-    tar xf /tmp/latest.tar.gz --directory=/var/www/html && \
-    rm /tmp/latest.tar.gz
+RUN apt install nginx wget -y
+# RUN apt install php7.4 libapache2-mod-php7.4 wget -y
+# RUN php7.4-{common,mbstring,xmlrpc,soap,gd,xml,intl,mysql,cli,zip,curl,fpm} -y
+RUN apt install php7.4 php7.4-fpm php7.4-gd php7.4-common php7.4-mysql php7.4-apcu php7.4-gmp php7.4-curl php7.4-intl php7.4-mbstring php7.4-xmlrpc php7.4-gd php7.4-xml php7.4-cli php7.4-zip -y
+
+RUN wget https://www.drupal.org/download-latest/tar.gz --directory-prefix=/tmp && \
+    tar xzvf /tmp/tar.gz --directory=/var/www/html --strip-components=1 && \
+    rm /tmp/tar.gz
+
 COPY dockerfiles/files/nginx/app/default /etc/nginx/sites-available/default
-COPY dockerfiles/files/wordpress/wp-config.php /var/www/html/wordpress/wp-config.php
+COPY dockerfiles/files/drupal/settings.php /var/www/html/sites/default/settings.php
 COPY dockerfiles/files/info.php /var/www/html
+
+RUN mkdir /var/www/html/sites/default/files
+RUN chmod a+w /var/www/html/sites/default/files
+RUN chmod a+w /var/www/html/sites/default/settings.php
+
 COPY dockerfiles/files/entrypoint.sh /
 ENTRYPOINT [ "bash", "/entrypoint.sh" ]
