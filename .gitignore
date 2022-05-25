@@ -5,3 +5,4 @@ Wantsome-Project.pdf
 environment/.vagrant/
 environment/files/jenkins_keys/id_rsa
 environment/files/jenkins_keys/id_rsa.pub
+environment/files/jenkins_credentials.xml
