@@ -3,3 +3,4 @@ ENV POSTGRES_PASSWORD=password
 # ENV POSTGRES_DB drupal
 # COPY drupal.sql /docker-entrypoint-initdb.d/
 
+EXPOSE 5432
