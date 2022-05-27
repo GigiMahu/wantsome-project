@@ -1,0 +1,21 @@
+pipeline {
+    environment {
+        registry = "gigimahu/p-load_balancer"
+        dockerRun = "docker run \
+                        --detach \
+                        --publish 80:80 \
+                        --network wantsome \
+                        --name load_balancer \
+                        ${registry}"
+    }
+    agent any
+    stages {
+        stage('Run Container on Env Server'){
+            steps{
+                sshagent(credentials: ['env_server']) {
+                    sh "ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 ${dockerRun}"
+                }
+            }
+        }
+    }
+}

@@ -50,6 +50,7 @@ pam-auth.
 pipeline-build-step.
 pipeline-github-lib.
 pipeline-graph-analysis.
+pipeline-groovy-lib.
 pipeline-input-step.
 pipeline-milestone-step.
 pipeline-model-api.

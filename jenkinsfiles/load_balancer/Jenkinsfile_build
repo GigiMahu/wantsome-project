@@ -1,14 +1,9 @@
 pipeline {
     environment {
-        registry = "gigimahu/p-database"
+        registry = "gigimahu/p-load_balancer"
         registryCredential = 'dockerhub_id'
         dockerImage = ''
-        dockerFile = 'dockerfile.db'
-        dockerRun = "docker run \
-                        --detach \
-                        --network wantsome \
-                        --name db \
-                        ${registry}"
+        dockerFile = 'dockerfile.lb'
     }
     agent any
     stages {
@@ -16,7 +11,7 @@ pipeline {
             steps {
                 git 'https://github.com/GigiMahu/wantsome-project.git'
             }
-        }
+        }        
         stage('Building Docker image') {
             steps{
                 script {
@@ -33,12 +28,9 @@ pipeline {
                 }
             }
         }
-        stage('Run Container on Env Server'){
+        stage('Cleaning up') {
             steps{
-                sshagent(credentials: ['env_server']) {
-                    sh "ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 docker network create wantsome"
-                    sh "ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 ${dockerRun}"
-                }
+                sh "docker rmi $registry"
             }
         }
     }

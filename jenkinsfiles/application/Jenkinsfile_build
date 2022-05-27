@@ -4,16 +4,6 @@ pipeline {
         registryCredential = 'dockerhub_id'
         dockerImage = ''
         dockerFile = 'dockerfile.app'
-        dockerRun1 = "docker run \
-                        --detach \
-                        --network wantsome \
-                        --name app1 \
-                        ${registry}"
-        dockerRun2 = "docker run \
-                        --detach \
-                        --network wantsome \
-                        --name app2 \
-                        ${registry}"
     }
     agent any
     stages {
@@ -21,7 +11,7 @@ pipeline {
             steps {
                 git 'https://github.com/GigiMahu/wantsome-project.git'
             }
-        }
+        }        
         stage('Building Docker image') {
             steps{
                 script {
@@ -38,13 +28,10 @@ pipeline {
                 }
             }
         }
-        stage('Run Container on Env Server'){
+        stage('Cleaning up') {
             steps{
-                sshagent(credentials: ['env_server']) {
-                    sh "ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 ${dockerRun1}"
-                    sh "ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 ${dockerRun2}"
-                }
+                sh "docker rmi $registry"
             }
-        }
+        }        
     }
 }
