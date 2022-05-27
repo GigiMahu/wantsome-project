@@ -180,11 +180,11 @@ Vagrant.configure("2") do |config|
   # config.vm.network "forwarded_port", guest: 22, host: 2222, host_ip: "127.0.0.1", id: 'ssh'
 
   # Vagrant freezes on 'SSH auth method: private key'
-  config.vm.provider "virtualbox" do |vb|
-    vb.customize ["modifyvm", :id, "--cableconnected1", "on"]
-    vb.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
-    vb.customize ["modifyvm", :id, "--uartmode1", "file", File::NULL]
-  end
+  # config.vm.provider "virtualbox" do |vb|
+    # vb.customize ["modifyvm", :id, "--cableconnected1", "on"]
+    # vb.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
+    # vb.customize ["modifyvm", :id, "--uartmode1", "file", File::NULL]
+  # end
 
   config.vm.box = "ubuntu/focal64"
   
@@ -198,8 +198,8 @@ Vagrant.configure("2") do |config|
     jk.vm.provision "shell", :inline => $os_packages_update
     jk.vm.provision "shell", :inline => $docker_install
     jk.vm.provision "shell", :inline => $user_setup
-    jk.vm.provision "shell", :inline => $jenkins_setup_war_package
-    # jk.vm.provision "shell", :inline => $jenkins_setup_deb_package
+    # jk.vm.provision "shell", :inline => $jenkins_setup_war_package
+    jk.vm.provision "shell", :inline => $jenkins_setup_deb_package
   end
 
   config.vm.define "env_server" do |dk|
