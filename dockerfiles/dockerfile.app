@@ -16,5 +16,5 @@ RUN mkdir /var/www/html/sites/default/files
 RUN chmod a+w /var/www/html/sites/default/files
 RUN chmod a+w /var/www/html/sites/default/settings.php
 
-COPY files/entrypoint.sh /
+COPY dockerfiles/files/entrypoint.sh /
 ENTRYPOINT [ "bash", "/entrypoint.sh" ]
