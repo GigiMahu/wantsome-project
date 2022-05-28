@@ -11,11 +11,13 @@ caffeine-api.
 checks-api.
 cloudbees-folder.
 command-launcher.
+configuration-as-code.
 credentials.
 credentials-binding.
 display-url-api.
 docker-build-step.
 docker-commons.
+docker-compose-build-step.
 docker-java-api.
 docker-plugin.
 docker-workflow.
