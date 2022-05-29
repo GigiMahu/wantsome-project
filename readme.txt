@@ -4,7 +4,7 @@ My Wantsome Project:
 - if there are problems with the plugins, restart Jenkins in web browser (Manage Jenkins -> Manage Plugins) \
 or unix CLI (vagrant ssh cicd_server -> sudo systemctl restart jenkins.service)
 - load Jenkins configuration from environment/jenkins.yaml file (Manage Jenkins -> Configuration as Code: \
-https://github.com/GigiMahu/wantsome-project/blob/f36857c2a9fabe5ef3f0bf10bd904c4247a3278d/environment/jenkins.yaml \
+https://github.com/GigiMahu/wantsome-project/environment/jenkins.yaml \
 -> Apply new configuration)
 - build Jenkins jobs in order
 - acces Drupal in a web browser 192.168.56.20

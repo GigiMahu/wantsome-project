@@ -1,6 +1,6 @@
-FROM ubuntu:focal
+FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt upgrade -y
 RUN apt install nginx -y
 COPY dockerfiles/files/nginx/lb/default /etc/nginx/sites-available/default
-ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
+ENTRYPOINT [“nginx”, “-g”, “daemon off;“]
