@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# ssh-keygen -t rsa -b 4096 -C "ansible"
+# ssh-keygen -t rsa -b 4096 -C "jenkins"
 
 $os_packages_update = <<SCRIPT
 #!/bin/bash
@@ -42,8 +42,8 @@ function set_authorized_keys {
     mkdir /home/$1/.ssh
   fi
   
-  if [[ ! -f /vagrant/ansible/keys/ansible.pub ]]; then
-    echo "Make sure the vagrant folder is mounted and the file ansible.pub exists!"
+  if [[ ! -f /vagrant/files/jenkins_keys/id_rsa.pub ]]; then
+    echo "Make sure the vagrant folder is mounted and the file id_rsa.pub exists!"
     exit 1
   fi
 
@@ -60,12 +60,12 @@ function set_ssh_keys {
   fi
   
   if [[ ! -f /vagrant/files/jenkins_keys/id_rsa.pub ]]; then
-    echo "Make sure the vagrant folder is mounted and the file jenkins.pub exists!"
+    echo "Make sure the vagrant folder is mounted and the file id_rsa.pub exists!"
     exit 1
   fi
 
   if [[ ! -f /vagrant/files/jenkins_keys/id_rsa ]]; then
-    echo "Make sure the vagrant folder is mounted and the file jenkins exists!"
+    echo "Make sure the vagrant folder is mounted and the file id_rsa exists!"
     exit 1
   fi
 
@@ -192,8 +192,8 @@ Vagrant.configure("2") do |config|
       vb.cpus = 1
       vb.memory = 1024
     end
-	dk.vm.provision "shell", :inline => $os_packages_update
-	dk.vm.provision "shell", :inline => $docker_install
+	  dk.vm.provision "shell", :inline => $os_packages_update
+	  dk.vm.provision "shell", :inline => $docker_install
     dk.vm.provision "shell", :inline => $user_setup
   end
 end
