@@ -1,11 +1,11 @@
 pipeline {
     environment {
+        registry = "gigimahu/p-database"
         dockerRun = "docker run \
-                        --name db \
-                        --network wantsome \
-                        -e POSTGRES_PASSWORD=password \
                         --detach \
-                        postgres:10"
+                        --network wantsome \
+                        --name db \
+                        ${registry}"
     }
     agent any
     stages {

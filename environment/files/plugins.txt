@@ -68,6 +68,7 @@ popper2-api.
 resource-disposer.
 scm-api.
 script-security.
+simple-queue.
 snakeyaml-api.
 ssh-agent.
 ssh-credentials.

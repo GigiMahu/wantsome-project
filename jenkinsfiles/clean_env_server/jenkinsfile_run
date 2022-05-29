@@ -1,0 +1,17 @@
+pipeline {
+    environment {
+        dockerCMD = "docker ps -aq | xargs docker stop | xargs docker rm"
+    }
+    agent any
+    stages {
+        stage('Clean Env Server'){
+            steps{
+                sshagent(credentials: ['env_server']) {
+                    sh "ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 ${dockerCMD}"
+                    sh "ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 docker image prune -af"
+                    sh "ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 docker network prune -f"
+                }
+            }
+        }
+    }
+}
