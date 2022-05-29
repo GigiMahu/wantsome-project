@@ -1,11 +1,14 @@
 pipeline {
     environment {
         dockerRun = "docker run \
-                        --name db \
+                        --name drupal-postgres \
+                        -d \
                         --network wantsome \
-                        -e POSTGRES_PASSWORD=password \
-                        --detach \
-                        postgres:10"
+                        -p 5432:5432 \
+                        -e POSTGRES_USER=postgres \
+                        -e POSTGRES_PASSWORD=postgres \
+                        -e POSTGRES_DB=postgres \
+                        postgres:10.21-alpine"
     }
     agent any
     stages {
