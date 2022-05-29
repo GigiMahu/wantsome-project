@@ -8,9 +8,9 @@ RUN unzip drupal-9.1.4.zip
 # RUN cp -Rf /drupal-9.1.4/* /var/wwww/html/drupal/
 RUN mv drupal-9.1.4 /var/www/html/drupal
 RUN rm -Rf drupal-9.1.4*
-COPY default /etc/nginx/sites-available/default
-COPY default.settings.php /var/www/html/drupal/sites/default/settings.php 
-COPY entrypoint.sh /tmp/entrypoint.sh
+COPY dockerfiles/files/nginx/app/default /etc/nginx/sites-available/default
+COPY dockerfiles/files/drupal/default.settings.php /var/www/html/drupal/sites/default/settings.php 
+COPY dockerfiles/files/entrypoint.sh /tmp/entrypoint.sh
 RUN chown -R www-data:www-data /var/www/html/drupal/
 RUN chmod -R 755 /var/www/html/drupal/
 RUN chmod +x /tmp/entrypoint.sh
