@@ -5,3 +5,14 @@ Wantsome-Project.pdf
 environment/.vagrant/
 environment/files/jenkins_keys/id_rsa
 environment/files/jenkins_keys/id_rsa.pub
+environment/vagrantfile_old
+environment/files/list_of_jenkins_plugins_script
+environment/files/plugins_jenkins.txt
+dockerfiles/automation.sh
+dockerfiles/database.sh
+dockerfiles/dockerfile.app_drupal
+dockerfiles/dockerfile.app_wp
+dockerfiles/dockerfile.db
+dockerfiles/dockerfile.db_mysql
+jenkinsfiles/database/Jenkinsfile_build
+jenkinsfiles/database/Jenkinsfile_run_old
