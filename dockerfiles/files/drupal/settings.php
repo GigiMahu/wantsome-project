@@ -179,7 +179,6 @@ $databases = [];
     $databases['default']['default'] = [
       'driver' => 'pgsql',
       'port' => '5432',
-      'namespace' => 'Drupal\\Core\\Database\\Driver\\pgsql',
       'database' => 'postgres',
       'username' => 'postgres',
       'password' => 'postgres',
