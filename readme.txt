@@ -6,7 +6,7 @@ or unix CLI (vagrant ssh cicd_server -> sudo systemctl restart jenkins.service)
 - load Jenkins configuration from /vagrant/jenkins_backup folder (Manage Jenkins -> ThinBackup -> Restore)
 - build Jenkins jobs in order
 - acces Drupal in a web browser 192.168.56.20
+- SSH keys, for jenkins user, are archived in environment/files/jenkins_keys folder 
 
-Problems:
-- how to pass ssh keys 
+Problem:
 - database configuration in Drupal
