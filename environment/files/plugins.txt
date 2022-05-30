@@ -11,7 +11,6 @@ caffeine-api.
 checks-api.
 cloudbees-folder.
 command-launcher.
-configuration-as-code.
 credentials.
 credentials-binding.
 display-url-api.
@@ -76,6 +75,7 @@ ssh-slaves.
 ssh-steps.
 sshd.
 structs.
+thinBackup.
 timestamper.
 token-macro.
 trilead-api.
