@@ -5,10 +5,8 @@ pipeline {
                         -d \
                         --network wantsome \
                         -p 5432:5432 \
-                        -e POSTGRES_USER=postgres \
                         -e POSTGRES_PASSWORD=postgres \
-                        -e POSTGRES_DB=postgres \
-                        postgres:10.21-alpine"
+                        postgres"
     }
     agent any
     stages {
