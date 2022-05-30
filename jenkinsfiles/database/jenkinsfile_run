@@ -1,7 +1,7 @@
 pipeline {
     environment {
         dockerRun = "docker run \
-                        --name drupal-postgres \
+                        --name db \
                         -d \
                         --network wantsome \
                         -p 5432:5432 \
