@@ -1,0 +1,10 @@
+commit ac038970172e9ce1a2170dd9c7be31687d35ff2d
+tree dd09cb93062d48b66a6fd7813ee4f9279c16b135
+parent e1b5519a60e212ccdf52296131e4214bfa1861e0
+author Gigi Mahu <gigi_mahu@yahoo.com> 2022-05-29 22:32:38 +0300
+committer Gigi Mahu <gigi_mahu@yahoo.com> 2022-05-29 22:32:38 +0300
+
+    New commit.
+
+
+:100755 100755 2b9e75546757015d7f01647f269ea2caaa4c795f e1479bbbebad1c7a92effc138bc0effcd25e7353 M	dockerfiles/files/entrypoint.sh
