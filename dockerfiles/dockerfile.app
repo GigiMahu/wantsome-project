@@ -3,6 +3,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt upgrade -y
 RUN apt install nginx wget -y
 
+RUN mkdir -p /var/run/php/
+
 RUN apt install  ca-certificates apt-transport-https software-properties-common -y
 RUN add-apt-repository ppa:ondrej/php -y
 
