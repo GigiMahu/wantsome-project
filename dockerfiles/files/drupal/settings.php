@@ -176,14 +176,16 @@ $databases = [];
  *
  * Sample Database configuration format for PostgreSQL (pgsql):
  * @code
- *   $databases['default']['default'] = [
- *     'driver' => 'pgsql',
- *     'database' => 'postgres',
- *     'username' => 'postgres',
- *     'password' => 'postgres',
- *     'host' => 'db',
- *     'prefix' => '',
- *   ];
+    $databases['default']['default'] = [
+      'driver' => 'pgsql',
+      'port' => '5432',
+      'namespace' => 'Drupal\\Core\\Database\\Driver\\pgsql',
+      'database' => 'postgres',
+      'username' => 'postgres',
+      'password' => 'postgres',
+      'host' => 'db',
+      'prefix' => '',
+    ];
  * @endcode
  *
  * Sample Database configuration format for SQLite (sqlite):
