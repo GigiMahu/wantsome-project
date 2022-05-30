@@ -82,7 +82,7 @@
    'password' => 'postgres',
    'host' => 'drupal-postgres',
    'port' => '5432',
-   'driver' => 'pgsql',
+   'driver' => 'php7.4-pgsql',
  *   'prefix' => '',
  *   'collation' => 'utf8mb4_general_ci',
  ];
@@ -210,7 +210,7 @@ $databases = [];
  * Sample Database configuration format for PostgreSQL (pgsql):
  * @code
     $databases['default']['default'] = [
-       'driver' => 'pgsql',
+       'driver' => 'php7.4-pgsql',
        'database' => 'drupal',
        'username' => 'drupal',
        'password' => 'drupal',
