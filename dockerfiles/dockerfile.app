@@ -1,18 +1,20 @@
-FROM ubuntu:20.04
+FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt update -y && apt upgrade -y
-RUN apt install wget vim unzip nginx php php-fpm php-mbstring php-gd php-xml php-simplexml postgresql-contrib php-pgsql -y
-# RUN mkdir -p /var/wwww/html/drupal
-RUN wget https://ftp.drupal.org/files/projects/drupal-9.1.4.zip
-RUN unzip drupal-9.1.4.zip
-# RUN cp -Rf /drupal-9.1.4/* /var/wwww/html/drupal/
-RUN mv drupal-9.1.4 /var/www/html/drupal
-RUN rm -Rf drupal-9.1.4*
+RUN apt update && apt upgrade -y
+RUN apt install nginx wget -y
+RUN apt install php7.4-fpm php7.4-gd php7.4-common php7.4-pgsql php7.4-apcu php7.4-gmp php7.4-curl php7.4-intl php7.4-mbstring php7.4-xmlrpc php7.4-gd php7.4-xml php7.4-cli php7.4-zip -y
+
+RUN wget https://www.drupal.org/download-latest/tar.gz --directory-prefix=/tmp && \
+   tar xzvf /tmp/tar.gz --directory=/var/www/html --strip-components=1 && \
+   rm /tmp/tar.gz
+
 COPY dockerfiles/files/nginx/app/default /etc/nginx/sites-available/default
-COPY dockerfiles/files/drupal/default.settings.php /var/www/html/drupal/sites/default/settings.php 
-COPY dockerfiles/files/entrypoint.sh /tmp/entrypoint.sh
-COPY dockerfiles/files/info.php /var/www/html/
-RUN chown -R www-data:www-data /var/www/html/drupal/
-RUN chmod -R 755 /var/www/html/drupal/
-RUN chmod +x /tmp/entrypoint.sh
-ENTRYPOINT ["/tmp/entrypoint.sh"]
+COPY dockerfiles/files/drupal/settings.php /var/www/html/sites/default/settings.php
+COPY dockerfiles/files/info.php /var/www/html
+
+RUN mkdir /var/www/html/sites/default/files
+RUN chmod a+w /var/www/html/sites/default/files
+RUN chmod a+w /var/www/html/sites/default/settings.php
+
+COPY dockerfiles/files/entrypoint.sh /
+ENTRYPOINT [ "bash", "/entrypoint.sh" ]
