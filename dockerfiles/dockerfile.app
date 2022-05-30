@@ -8,7 +8,7 @@ RUN mkdir -p /var/run/php/
 RUN apt install  ca-certificates apt-transport-https software-properties-common -y
 RUN add-apt-repository ppa:ondrej/php -y
 
-RUN apt install php8.0 php8.0-simplexml postgresql-contrib -y
+RUN apt install php8.0 php8.0-simplexml -y
 RUN apt install php8.0-fpm php8.0-gd php8.0-common php8.0-pgsql php8.0-apcu php8.0-gmp php8.0-curl php8.0-intl php8.0-mbstring php8.0-xmlrpc php8.0-gd php8.0-xml php8.0-cli php8.0-zip -y
 
 RUN mkdir /var/www/html/drupal/
