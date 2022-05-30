@@ -2,7 +2,7 @@ FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt upgrade -y
 RUN apt install nginx wget -y
-RUN apt install php-fpm php-gd php-common php-pgsql php-apcu php-gmp php-curl php-intl php-mbstring php-xmlrpc php-gd php-xml php-cli php-zip -y
+RUN apt install php8.0-fpm php8.0-gd php8.0-common php8.0-pgsql php8.0-apcu php8.0-gmp php8.0-curl php8.0-intl php8.0-mbstring php8.0-xmlrpc php8.0-gd php8.0-xml php8.0-cli php8.0-zip -y
 
 RUN mkdir /var/www/html/drupal/
 RUN chmod a+w /var/www/html/drupal
