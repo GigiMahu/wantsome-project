@@ -1,0 +1,11 @@
+commit aac4a304e7743e281299c5de19925918715c54cd
+tree 418cb822e4702b7a9fe65c0ab20235ca1be00cf4
+parent fe4f1787b2fc72c88afb359b56022141da085e5b
+author Gigi Mahu <gigi_mahu@yahoo.com> 2022-05-30 07:50:23 +0300
+committer Gigi Mahu <gigi_mahu@yahoo.com> 2022-05-30 07:50:23 +0300
+
+    New commit.
+
+
+:100755 100755 f0f65ab9bbd54b03c914db5f6c94b8e62aa6f845 a235791aba967cd36b3f3464f1e8575ae7105241 M	dockerfiles/dockerfile.lb
+:100755 100755 a610aac1c484b3e0d521821c3b2b1a2f7c096f6f decaa1072f820497afc900eb379a2a4a51c941ec M	dockerfiles/files/drupal/settings.php

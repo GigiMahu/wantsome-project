@@ -1,0 +1,30 @@
+commit 7287ba7115a4df7b912253f67b3c2ea4e526c4db
+tree 4141fe6464005d0ecbdb124896b10c1f9938cbcb
+parent 38b19a70d55144382b26635059f177a998cb3137
+author Gigi Mahu <gigi_mahu@yahoo.com> 2022-05-30 06:45:13 +0300
+committer Gigi Mahu <gigi_mahu@yahoo.com> 2022-05-30 06:45:13 +0300
+
+    New commit.
+
+
+:100755 100755 238ba5c2eea474f70a7638fa8b36971244b6b946 5d54017a725c86d722c4d5723eb449e0edb82b3b M	dockerfiles/files/drupal/settings.php
+commit 38b19a70d55144382b26635059f177a998cb3137
+tree f73166ce39ee8509082fa2197e2ed4f22354da59
+parent 922ca8569bd9e6ac4a5561df4c4c9402ba9b238b
+author Gigi Mahu <gigi_mahu@yahoo.com> 2022-05-30 06:41:03 +0300
+committer Gigi Mahu <gigi_mahu@yahoo.com> 2022-05-30 06:41:03 +0300
+
+    New commit.
+
+
+:100755 100755 6d41cd1045b5d38e2b2de02adc6f839a0e2388fa 60d98aff84b6aabf17605f531673f09196d91127 M	dockerfiles/dockerfile.app
+commit 922ca8569bd9e6ac4a5561df4c4c9402ba9b238b
+tree fd63c28350e5ad01caefad60491f4a423b78e38a
+parent 8de355e69d5acb63f82f810ec8451f334d4c5362
+author Gigi Mahu <gigi_mahu@yahoo.com> 2022-05-30 06:33:26 +0300
+committer Gigi Mahu <gigi_mahu@yahoo.com> 2022-05-30 06:33:26 +0300
+
+    New commit.
+
+
+:100755 100755 9b4fdf43e437a242cebe4a9d3ea0b223ffac7daf 6d41cd1045b5d38e2b2de02adc6f839a0e2388fa M	dockerfiles/dockerfile.app
