@@ -6,6 +6,11 @@ pipeline {
                         --network wantsome \
                         --name app1 \
                         ${registry}"
+        dockerRun2 = "docker run \
+                        --detach \
+                        --network wantsome \
+                        --name app2 \
+                        ${registry}"
     }
     agent any
     stages {
@@ -13,6 +18,7 @@ pipeline {
             steps{
                 sshagent(credentials: ['env_server']) {
                     sh "ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 ${dockerRun1}"
+                    sh "ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 ${dockerRun2}"
                 }
             }
         }
