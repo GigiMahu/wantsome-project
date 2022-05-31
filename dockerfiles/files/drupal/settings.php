@@ -250,7 +250,7 @@
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = 'Sq1Y4prYfIIeiM-y9mAjfbKRHS6GDnVItJfB7pA6qjUZDNFKcTLqiSQD9a0v3xJdz9o-S_COZg';
 
 /**
  * Deployment identifier.
@@ -770,3 +770,14 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+$databases['default']['default'] = array (
+  'database' => 'postgres',
+  'username' => 'postgres',
+  'password' => 'postgres',
+  'prefix' => '',
+  'host' => 'db',
+  'port' => '5432',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\pgsql',
+  'driver' => 'pgsql',
+);
+$settings['config_sync_directory'] = 'sites/default/files/sync';
