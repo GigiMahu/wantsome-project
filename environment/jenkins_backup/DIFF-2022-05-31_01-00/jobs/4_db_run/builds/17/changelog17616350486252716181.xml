@@ -1,0 +1,10 @@
+commit a2e94974a1008f2e685521fe12ba050d668abf07
+tree 2fde3045ea0d1e9ab71f77a50f4648a8a9bd0b33
+parent 471663e9379c9987f5ddaf3a4d6c960abfd5eb11
+author Gigi Mahu <gigi_mahu@yahoo.com> 2022-05-30 21:08:46 +0300
+committer Gigi Mahu <gigi_mahu@yahoo.com> 2022-05-30 21:08:46 +0300
+
+    New commit 30052022 20:00
+
+
+:100755 100755 b4b38350b61d2ba1da0ea5b3e43858f45d5b134f ce4dbf3543d943db5a51f42e677d4d9166bd0428 M	dockerfiles/files/nginx/app/default
