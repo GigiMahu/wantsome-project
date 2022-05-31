@@ -24,11 +24,11 @@ COPY dockerfiles/files/info.php /var/www/html
 RUN mkdir /var/www/html/drupal/sites/default/files
 RUN mkdir /var/www/html/drupal/sites/default/files/sync
 
-# RUN chown -R www-data:www-data /var/www/html/drupal/
-# RUN chmod -R 755 /var/www/html/drupal/
+# RUN chmod -R a+w /var/www/html/drupal/sites/default/files
+# RUN chmod a+w /var/www/html/drupal/sites/default/settings.php
 
-RUN chmod -R a+w /var/www/html/drupal/sites/default/files
-RUN chmod a+w /var/www/html/drupal/sites/default/settings.php
+RUN chown -R www-data:www-data /var/www/html/drupal/
+RUN chmod -R 755 /var/www/html/drupal/
 
 COPY dockerfiles/files/entrypoint.sh /
 ENTRYPOINT [ "bash", "/entrypoint.sh" ]
