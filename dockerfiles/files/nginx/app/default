@@ -14,7 +14,8 @@ server {
         log_not_found off;
     }
     location ~ \.php$ {
-        try_files $uri =404;
+        # try_files $uri =404;
+        try_files $uri $uri/ /index.php?$query_string;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;
         fastcgi_index index.php;
