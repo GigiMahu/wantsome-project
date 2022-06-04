@@ -1,7 +1,7 @@
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
-    root /var/www/html;
+    root /var/www/html/drupal;
     index index.html index.htm index.nginx-debian.html index.php;
     server_name _;
     location / {
@@ -14,8 +14,8 @@ server {
         log_not_found off;
     }
     location ~ \.php$ {
-        # try_files $uri =404;
-        try_files $uri $uri/ /index.php?$query_string;
+        try_files $uri =404;
+        # try_files $uri $uri/ /index.php?$query_string;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;
         fastcgi_index index.php;
