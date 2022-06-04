@@ -103,7 +103,7 @@ $jenkins_setup_war_package = <<SCRIPT
   # JENKINS_VERSION="2.332.1"
   # JENKINS_URL="https://get.jenkins.io/war-stable/${JENKINS_VERSION}/jenkins.war"
   
-  JENKINS_URL="https://get.jenkins.io/war/2.349/jenkins.war"
+  JENKINS_URL="https://get.jenkins.io/war/2.350/jenkins.war"
 
   echo " Installing Jenkins dependencies..."
   apt install openjdk-11-jre -y
