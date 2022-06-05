@@ -35,6 +35,7 @@ RUN    /etc/init.d/postgresql start &&\
     createdb -O drupal drupal
 
 RUN mkdir -p /etc/postgresql/${PG_SQL_VER}/main
+RUN mkdir -p /usr/lib/postgresql/${PG_SQL_VER}/bin
 # Adjust PostgreSQL configuration so that remote connections to the
 # database are possible.
 RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/${PG_SQL_VER}/main/pg_hba.conf
