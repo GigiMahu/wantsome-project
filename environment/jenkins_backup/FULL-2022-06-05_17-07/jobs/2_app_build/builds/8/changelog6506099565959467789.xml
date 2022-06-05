@@ -1,0 +1,10 @@
+commit 38b19a70d55144382b26635059f177a998cb3137
+tree f73166ce39ee8509082fa2197e2ed4f22354da59
+parent 922ca8569bd9e6ac4a5561df4c4c9402ba9b238b
+author Gigi Mahu <gigi_mahu@yahoo.com> 2022-05-30 06:41:03 +0300
+committer Gigi Mahu <gigi_mahu@yahoo.com> 2022-05-30 06:41:03 +0300
+
+    New commit.
+
+
+:100755 100755 6d41cd1045b5d38e2b2de02adc6f839a0e2388fa 60d98aff84b6aabf17605f531673f09196d91127 M	dockerfiles/dockerfile.app

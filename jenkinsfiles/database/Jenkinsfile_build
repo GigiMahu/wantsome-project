@@ -6,12 +6,7 @@ pipeline {
         dockerFile = 'dockerfile.db'
     }
     agent any
-    stages {
-        stage('Cloning Git') {
-            steps {
-                git 'https://github.com/GigiMahu/wantsome-project.git'
-            }
-        }        
+    stages {     
         stage('Building Docker image') {
             steps{
                 script {

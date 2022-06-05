@@ -30,12 +30,13 @@ USER postgres
 # then create a database `drupal` owned by the ``drupal`` role.
 # Note: here we use ``&&\`` to run commands one after the other - the ``\``
 #       allows the RUN command to span multiple lines.
-RUN    /etc/init.d/postgresql start &&\
+RUN /etc/init.d/postgresql start &&\
     psql --command "CREATE USER drupal WITH SUPERUSER PASSWORD 'drupal';" &&\
     createdb -O drupal drupal
 
 RUN mkdir -p /etc/postgresql/${PG_SQL_VER}/main
-RUN mkdir -p /usr/lib/postgresql/${PG_SQL_VER}/bin
+#RUN mkdir -p /usr/lib/postgresql/${PG_SQL_VER}/bin
+
 # Adjust PostgreSQL configuration so that remote connections to the
 # database are possible.
 RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/${PG_SQL_VER}/main/pg_hba.conf

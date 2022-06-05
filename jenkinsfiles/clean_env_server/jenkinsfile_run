@@ -4,6 +4,11 @@ pipeline {
     }
     agent any
     stages {
+        stage('Cloning Git') {
+            steps {
+                git 'https://github.com/GigiMahu/wantsome-project.git'
+            }
+        } 
         stage('Clean Env Server'){
             steps{
                 sshagent(credentials: ['env_server']) {
