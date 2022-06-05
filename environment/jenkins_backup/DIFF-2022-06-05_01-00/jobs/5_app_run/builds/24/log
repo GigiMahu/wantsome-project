@@ -1,0 +1,154 @@
+Started by user unknown or anonymous
+Obtained jenkinsfiles/application/Jenkinsfile_run from git https://github.com/GigiMahu/wantsome-project.git
+[8mha:////4ITWwl+ms1cxp6FDSV9HoQaAsXEuL6Dv/lBSlUIslRgEAAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4GWk3X58G2Wcricj3mFzY0uPJGTf6YpDJLKaL/PKf6BIAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] node
+Running on [8mha:////4CDgaZmYv0HGc2aYVJ2crtp+zP9YS7DQWPP6Lken75CEAAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZR/eT83ILSktQifY2k0sycEt3MPE19AHHxbH3KAAAA[0mJenkins in /opt/jenkins/workspace/5_app_run
+[8mha:////4IIdiL7I9Yyf1QWTME6CBEM/WqnWHq39IC0+I14wC43eAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4IrzHtSrtpYjz6naxDyL8Lee3IZptRLt8Hhp7pg6uDh4AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gQkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jc09154wAAAAA==[0m[Pipeline] stage
+[8mha:////4MgNvHDAxsYEGFfHWI+LWP/pS4hYfJAArTRSDsWc5zE5AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0ggUxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jek7ggRwAAAAA==[0m[Pipeline] { (Declarative: Checkout SCM)
+[8mha:////4HOpIefLPKet4J8dCQTB4yIO1oHYiIpESn0cg71yrsuyAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbaWGsbAmNJ0AWEZb8zwLrbuWJvJp3kLiJlZNMMm+a93rDOic4UbLcG+wdZu14DKOti0+U+lugiXu6ck2YKRguzSSpM+cFJRUDS1gDKwEbgzpQdmgLbIVXD9UGhba9lFS/o4DGdQM8gYlqLiqVL8wJdvexy4Q/z18BzLEA29ce4gfg7KmOvAAAAA==[0m[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /opt/jenkins/workspace/5_app_run/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/GigiMahu/wantsome-project.git # timeout=10
+Fetching upstream changes from https://github.com/GigiMahu/wantsome-project.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.25.1'
+ > git fetch --tags --force --progress -- https://github.com/GigiMahu/wantsome-project.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision e475732d13c3e20985e105d902bc8b2a2a2baa80 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f e475732d13c3e20985e105d902bc8b2a2a2baa80 # timeout=10
+Commit message: "New commit 04062022 20:20"
+ > git rev-list --no-walk a0d2b0a634ab127bcbcdf684a6a491ef68c32fa1 # timeout=10
+[8mha:////4MMZvWfWkW2Pkm89awHAM5xW7zZrLfEHPFwuqvbNTR2MAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbGRNjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j9Dg2gqvAAAAA==[0m[Pipeline] }
+[8mha:////4AkK8exvM9WbZWAAcfKcq9Csz0F6c8rixaWiXXYyufmaAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQRbWRhjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j9J+wGOvAAAAA==[0m[Pipeline] // stage
+[8mha:////4KstvyZqdpGFDIrWWVgh3DYVIZavgG46ncQ5EkF5sYfaAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQDEh2iorXc8AITG+PEugv2haTiRXyNPxCIRMVWOyut5vmCMic4UPKycdgGzHWQXez91ORAqb1EGmRDZ1kTZopOajdosu44oyZ2MEcUsFCwdFhHygE9w0o15m6qaNBXJ07TtldQBHuDBwg1mdkk/sKYYH3tbSb8ef4KYOwYxI6h2G4+x/INtuQqUcEAAAA=[0m[Pipeline] withEnv
+[8mha:////4MtiU5SnEyr5DvgiJbb/xZuCseMsT30+dXr55nuGFsQAAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycoiUzoiJNerCCUITQtLo/zZJSSdOxNW4Ay2VmPBg2Zas93pDGQOcKBjuNHYWY2t570czJ54pdDdPmTu68pYwkte80bkhpc9rbShpWFUw2AjYamw9RYsmwU44+ZCVl2iqSwrzdhTArBrgCYWYyUmG9C1TgP19VJHwx/kLgKlPwOrDYvXyLD8BobDcwgAAAA==[0m[Pipeline] {
+[8mha:////4AAs8I+N7oU7L5KDjjN2zpfgKseeN8iG4Mw6aykeiLb/AAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUZUVMrFEWThCaEJJG/7dJSjpxIq7GHWipxIQHy7ZkvdcbqhjgRMEwp7GzGFvLej+aObFMobt5yszRlbWEkbxmQmdBSp/XKihpWFWUsOGw1dh6ihZNgh138iFrL9HUlxTm7cihtGqAJxR8JicZ0rdMAfb3UUXCH+cvAKY+Qdk0ix2WZ/UBbwyqm8IAAAA=[0m[Pipeline] withEnv
+[8mha:////4L44BdhmQc6MFzrVd4c1B7rQZCQxQqs+8lp6rruZTh9JAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUwIiYukZZOEFoQkgb/V9+UtqJE3E17kBLJSY8WLYl673eUESGE7ETjcXWY6y96ELvpiQG4vYaaBANXURNGClYoeygyNhqqYqShUVZDisJa4t1oOjRJdjIRj90GTS68px42o4Scm/u8IRMTuSkOX3LyLC99SYS/jh/ATB2CfLdfrbD/Cw+y7kUycIAAAA=[0m[Pipeline] {
+[8mha:////4EvxquFVChUhW0dF+XX20lQaKyvpgS3lYJY/P4uPz59/AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUCDbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxAbNWnxXCAAAA[0m[Pipeline] stage
+[8mha:////4ELuY2x/LkVyWYqen7oFasAxZU6xJbY8UmMfGhfWzeh7AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUSDAhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD5WQ+PfCAAAA[0m[Pipeline] { (Run Container on Env Server)
+[8mha:////4Cv8BePU8JBXgvyGS14D8eW4P8gsAQKZ6AjA10r6K8kTAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUDLAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD/s94rDCAAAA[0m[Pipeline] sshagent
+[ssh-agent] Using credentials jenkins (env_server)
+[ssh-agent] Looking for ssh-agent implementation...
+[ssh-agent]   Exec ssh-agent (binary ssh-agent on a remote machine)
+$ ssh-agent
+SSH_AUTH_SOCK=/tmp/ssh-3OuJgBjG1zWD/agent.112949
+SSH_AGENT_PID=112952
+Running ssh-add (command line suppressed)
+Identity added: /opt/jenkins/workspace/5_app_run@tmp/private_key_12544819511114417893.key (jenkins)
+[ssh-agent] Started.
+[8mha:////4D0SqGec3SlWaGKY/gfdVVXpvD8rpcoxp5as+wqcLHaZAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohULDAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD1+IXOLCAAAA[0m[Pipeline] {
+[8mha:////4C+bSes9+VkignqsqXWK6DWbvgd24nKOv+azViIPOaHGAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiKpAQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHNxXfVKy+AAAA[0m[Pipeline] sh
++ ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 docker run --detach --network wantsome --name app1 gigimahu/p-application
+Unable to find image 'gigimahu/p-application:latest' locally
+latest: Pulling from gigimahu/p-application
+d5fd17ec1767: Already exists
+106075572aea: Pulling fs layer
+21e1d9923bd3: Pulling fs layer
+f1759a81ffac: Pulling fs layer
+5b08071ffe21: Pulling fs layer
+3cda62ae5d58: Pulling fs layer
+d4d9b00ee5ea: Pulling fs layer
+3d27121421c0: Pulling fs layer
+a25f28b4c655: Pulling fs layer
+a3ed1a0ac1e8: Pulling fs layer
+e56bf95df4a0: Pulling fs layer
+0f046504b5a6: Pulling fs layer
+242e41ee2214: Pulling fs layer
+afe9b6e24875: Pulling fs layer
+579e70419f8e: Pulling fs layer
+da3fdecb6eed: Pulling fs layer
+404be4485abc: Pulling fs layer
+bd491aefd79e: Pulling fs layer
+5b08071ffe21: Waiting
+3cda62ae5d58: Waiting
+d4d9b00ee5ea: Waiting
+3d27121421c0: Waiting
+a25f28b4c655: Waiting
+a3ed1a0ac1e8: Waiting
+e56bf95df4a0: Waiting
+0f046504b5a6: Waiting
+242e41ee2214: Waiting
+afe9b6e24875: Waiting
+579e70419f8e: Waiting
+da3fdecb6eed: Waiting
+404be4485abc: Waiting
+bd491aefd79e: Waiting
+f1759a81ffac: Verifying Checksum
+f1759a81ffac: Download complete
+21e1d9923bd3: Verifying Checksum
+21e1d9923bd3: Download complete
+3cda62ae5d58: Verifying Checksum
+3cda62ae5d58: Download complete
+5b08071ffe21: Verifying Checksum
+5b08071ffe21: Download complete
+3d27121421c0: Verifying Checksum
+3d27121421c0: Download complete
+d4d9b00ee5ea: Verifying Checksum
+d4d9b00ee5ea: Download complete
+106075572aea: Verifying Checksum
+106075572aea: Download complete
+a25f28b4c655: Verifying Checksum
+a25f28b4c655: Download complete
+106075572aea: Pull complete
+e56bf95df4a0: Verifying Checksum
+e56bf95df4a0: Download complete
+0f046504b5a6: Verifying Checksum
+0f046504b5a6: Download complete
+242e41ee2214: Verifying Checksum
+242e41ee2214: Download complete
+21e1d9923bd3: Pull complete
+f1759a81ffac: Pull complete
+afe9b6e24875: Verifying Checksum
+afe9b6e24875: Download complete
+579e70419f8e: Verifying Checksum
+579e70419f8e: Download complete
+a3ed1a0ac1e8: Verifying Checksum
+a3ed1a0ac1e8: Download complete
+bd491aefd79e: Verifying Checksum
+bd491aefd79e: Download complete
+5b08071ffe21: Pull complete
+3cda62ae5d58: Pull complete
+404be4485abc: Verifying Checksum
+404be4485abc: Download complete
+da3fdecb6eed: Verifying Checksum
+da3fdecb6eed: Download complete
+d4d9b00ee5ea: Pull complete
+3d27121421c0: Pull complete
+a25f28b4c655: Pull complete
+a3ed1a0ac1e8: Pull complete
+e56bf95df4a0: Pull complete
+0f046504b5a6: Pull complete
+242e41ee2214: Pull complete
+afe9b6e24875: Pull complete
+579e70419f8e: Pull complete
+da3fdecb6eed: Pull complete
+404be4485abc: Pull complete
+bd491aefd79e: Pull complete
+Digest: sha256:72621921ad182c14c184da8306c585a7e91816dd7c03c87e7f82e7c6bc49197c
+Status: Downloaded newer image for gigimahu/p-application:latest
+63a49b4dcc4d957a851bf3d9dd904b8f3affe12e10383f7518ff85c08db91a70
+[8mha:////4Mzm0lUZefND2VnH250Eh8KwWspKwyEIkjKMy7jN1NtYAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiKoQQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHN1TuT7W+AAAA[0m[Pipeline] sh
++ ssh -o StrictHostKeyChecking=no jenkins@192.168.56.20 docker run --detach --network wantsome --name app2 gigimahu/p-application
+48bfb99c2ca8a5e53c6999c6a1189b04312eff90ec6a79872977e9fd10de6590
+[8mha:////4KvuAOAv5MHhmQWCEA15RGxy5t0lLSTw7xkJxcAMy/giAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICNBQoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDQMEcr9Ntfu8AGHKGa5vgAAAA==[0m[Pipeline] }
+$ ssh-agent -k
+unset SSH_AUTH_SOCK;
+unset SSH_AGENT_PID;
+echo Agent pid 112952 killed;
+[ssh-agent] Stopped.
+[8mha:////4KnV/HJETUFEqsvIEhHEo36SU5KeqlLDQtBDCryFcimDAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKiUNAgqrRWGl5gYmOcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThwM9poGS7Gz6N1o8sKJw3B1PGHPF+yYIjuNrZ5aVrpZsOWkYUlRwkrARlPnOFoyCbailw9ZOUmmOqeQv6OA0qo7PKEQ2ZxkSF+YA+xuo4pMP89fAczeJyj3da768AG0yz0FvgAAAA==[0m[Pipeline] // sshagent
+[8mha:////4Ci9vHZIF3K3NuHx7OqkDZUjAZHSCgS6wFLHsE2VubMPAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIRkagQVVorDS8w8WGcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThyM6JEGS7GzwrvR5CUmDsPV8SR6voiOKbJD0eLUssZmwZYTwpKihJWEDVLnOFoyCbayVw9VOUWmOqeQv6OE0uo7PKGQ2ZxUSF+YA+xuo45MP89fAczeJyjrOtf+8AGg6KAavgAAAA==[0m[Pipeline] }
+[8mha:////4I8I4OYOcTSyGzc+z4Iojf7krQU8MszFMW8AemN/1bLuAAAApR+LCAAAAAAAAP9tjTsOwjAQRDdBFLSUHGIjPh1KRWu54QQmMcaJtRtsB6fiRFyNO2ARiYopRvOmea83LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDQMEcrdPtf28AGTC/umvgAAAA==[0m[Pipeline] // stage
+[8mha:////4A2rmNnC5q7W4Ubv/rssvboVs5OI6wDZF5EEAJyOx//aAAAApR+LCAAAAAAAAP9tjTsOwjAQRDdBFLSUHGIjPh1KRWu54QQmMcaJtRtsB6fiRFyNO2ARiYopRvOmea83LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDQMEcrdIdd2/wGIrpolvgAAAA==[0m[Pipeline] }
+[8mha:////4JcOifT+mGKlIZVAqpp+JznH8jwe3hqRg0OuI7QUU5BaAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIRkagQVVorDS8w8WGcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThyM6JEGS7GzwrvR5CUmDsPV8SR6voiOKbJD0eLUssZmwZYTwpKihJWEDVLnOFoyCbayVw9VOUWmOqeQv6OE0uo7PKGQ2ZxUSF+YA+xuo45MP89fAczeJyjrQ659/QG7TcGZvgAAAA==[0m[Pipeline] // withEnv
+[8mha:////4I8OTFU6287it2n1xEd00g+6OYfQ8H3BElphJkor7rQaAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKiUNAgqrRWGl5gYmOcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThwM9poGS7Gz6N1o8sKJw3B1PGHPF+yYIjuNrZ5aVrpZsOWkYUlRwkrARlPnOFoyCbailw9ZOUmmOqeQv6OA0qo7PKEQ2ZxkSF+YA+xuo4pMP89fAczeJyj3h1x1/QGvblyGvgAAAA==[0m[Pipeline] }
+[8mha:////4Eu7X4rXg7Yz049K18sYXXhTx17QZziiG0ucnVx0EUYAAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICNBQoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDQMEcr9Iddu+wGcjQc6vgAAAA==[0m[Pipeline] // withEnv
+[8mha:////4CcVWRU2fZI2Woo5e5VAPOKKSbyz2fQaZFmfTMHuO6fAAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKREAUSoqK10vACkxjjxLoL9oWk4kV8jT8QEYmKrXammdcbyxRx5OhUY6n1lCqvutC76amBY3sNPKiGL6piShysKu1Qcm1PM5YsFvOyHAuNlaUqcPLkBGvdmIcpgiFXnCVO7qCR+/qOJzI9lcVE+cIYsbn1dWL6df4GMHadIN/uBdnuA+oSoWS9AAAA[0m[Pipeline] }
+[8mha:////4HJbH51Az27QCAqKwnKtVf/+QPSO0EY1fL0THSny85vXAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMKRoEKIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2HWCfLsXZLsP+a6lx70AAAA=[0m[Pipeline] // node
+[8mha:////4Kr8DUnXM/SdXGsi0VW89vgd20q7tzMmfUJv4664IrkiAAAAoh+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMJBUCIqWisNLzCJMU6su2BfSCpexNf4AxGRqNhqZ5p5vbFMEUeOTjWWWk+p8qoLvZueGji218CDaviiKqbEwarSDiXX9jRjyWIxL8ux0FhZqgInT06w1o15mCIYcsVZ4uQOGrmv73gi01NZTJQvjBGbW18npl/nbwBj1wny/VaQ7T67L+52vQAAAA==[0m[Pipeline] End of Pipeline
+Finished: SUCCESS
