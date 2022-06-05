@@ -1,0 +1,10 @@
+commit c87ba97d8532d81c2a6f88b30a558e48186be478
+tree 8761ded9ae42f2772c8178154bbddc933358baf9
+parent 8341647b110e00919e4b290aa2b28fca114c9802
+author Gigi Mahu <gigi_mahu@yahoo.com> 2022-06-05 10:28:17 +0300
+committer Gigi Mahu <gigi_mahu@yahoo.com> 2022-06-05 10:28:17 +0300
+
+    New commit 05062022 10:30
+
+
+:100755 100755 756fd19922c7c8451ab84b405abf85be0f30eb1f 0a537edd7633c5bed56515c70217ea00fcdd697f M	dockerfiles/dockerfile.db
