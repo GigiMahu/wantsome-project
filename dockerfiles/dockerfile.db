@@ -34,7 +34,7 @@ RUN    /etc/init.d/postgresql start &&\
     psql --command "CREATE USER drupal WITH SUPERUSER PASSWORD 'drupal';" &&\
     createdb -O drupal drupal
 
-RUN mkdir/etc/postgresql/14/main
+RUN mkdir /etc/postgresql/14/main
 # Adjust PostgreSQL configuration so that remote connections to the
 # database are possible.
 RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/14/main/pg_hba.conf
