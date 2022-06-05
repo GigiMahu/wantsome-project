@@ -1,7 +1,7 @@
 FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive
+ENV PG_SQL_VER="14"
 RUN apt update && apt upgrade -y
-
 RUN apt install gnupg wget ca-certificates -y
 
 # Add the PostgreSQL PGP key to verify their Debian packages.
@@ -34,13 +34,13 @@ RUN    /etc/init.d/postgresql start &&\
     psql --command "CREATE USER drupal WITH SUPERUSER PASSWORD 'drupal';" &&\
     createdb -O drupal drupal
 
-RUN mkdir -p /etc/postgresql/14/main
+RUN mkdir -p /etc/postgresql/${PG_SQL_VER}/main
 # Adjust PostgreSQL configuration so that remote connections to the
 # database are possible.
-RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/14/main/pg_hba.conf
+RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/${PG_SQL_VER}/main/pg_hba.conf
 
-# And add ``listen_addresses`` to ``/etc/postgresql/14/main/postgresql.conf``
-RUN echo "listen_addresses='*'" >> /etc/postgresql/14/main/postgresql.conf
+# And add ``listen_addresses`` to ``/etc/postgresql/${PG_SQL_VER}/main/postgresql.conf``
+RUN echo "listen_addresses='*'" >> /etc/postgresql/${PG_SQL_VER}/main/postgresql.conf
 
 # Expose the PostgreSQL port
 EXPOSE 5432
@@ -49,4 +49,4 @@ EXPOSE 5432
 VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
 
 # Set the default command to run when starting the container
-CMD ["/usr/lib/postgresql/14/bin/postgres", "-D", "/var/lib/postgresql/14/main", "-c", "config_file=/etc/postgresql/14/main/postgresql.conf"]
+CMD ["/usr/lib/postgresql/${PG_SQL_VER}/bin/postgres", "-D", "/var/lib/postgresql/${PG_SQL_VER}/main", "-c", "config_file=/etc/postgresql/${PG_SQL_VER}/main/postgresql.conf"]
